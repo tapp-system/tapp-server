@@ -1,0 +1,143 @@
+{
+    "compilerOptions": {
+        // _ Type Checking
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "alwaysStrict": true,
+        "exactOptionalPropertyTypes": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitAny": true,
+        "noImplicitOverride": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "strict": true,
+        "strictBindCallApply": true,
+        "strictFunctionTypes": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": true,
+        "useUnknownInCatchVariables": true,
+
+        // _ Modules
+        "allowArbitraryExtensions": false,
+        "allowImportingTsExtensions": false,
+        "allowUmdGlobalAccess": true,
+        "baseUrl": "./",
+        // "customConditions": [],
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        // "moduleSuffixes": [], // NOT NEEDED -> Since only *.ts files and not *.{blah}.ts will be used
+        "noResolve": false,
+        "paths": {},
+        "resolveJsonModule": true,
+        "resolvePackageJsonExports": false,
+        "resolvePackageJsonImports": false,
+        "rootDir": "./src",
+        // "rootDirs": [], // NOT NEEDED -> Since there will only be src as root dir
+        "typeRoots": ["./node_modules/@types/**/*" /*, "./ts"*/],
+        // "types": [], // NOT NEEDED -> No reason to exclude any node_modules/@types/* package IntelliSense
+
+        // _ Emit
+        // "declaration": false,
+        // "declarationDir": "", // NOT NEEDED -> No type declarations generated
+        "declarationMap": false,
+        "downlevelIteration": true,
+        "emitBOM": false,
+        "emitDeclarationOnly": false,
+        "importHelpers": true,
+        // DEPRECATED "importsNotUsedAsValues": "error",
+        "inlineSourceMap": false,
+        "inlineSources": true,
+        // "mapRoot": "" // NOT NEEDED -> No Maps generated
+        "newLine": "lf",
+        "noEmit": false,
+        "noEmitHelpers": true,
+        "noEmitOnError": true,
+        "outDir": "./dist",
+        // "outFile": "" // NOT NEEDED -> Since project should not be transpiled to one file
+        "preserveConstEnums": true, // ~ Makes transpiled Enums look weird
+        // DEPRECATED "preserveValueImports": true,
+        "removeComments": true,
+        "sourceMap": true,
+        "sourceRoot": "/",
+        "stripInternal": true,
+
+        // _ JavaScript Support
+        "allowJs": false,
+        "checkJs": false,
+        // "maxNodeModuleJsDepth": 0 // NOT YET NEEDED -> Can only be used when checkJS is set to true
+
+        // _ Editor Support
+        "disableSizeLimit": false, // NOT YET NEEDED -> Only activate it when TS cannot allocate enough memory for the project
+        "plugins": [],
+
+        // _ Interop Constraints
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "isolatedModules": true,
+        "preserveSymlinks": false,
+        "verbatimModuleSyntax": true,
+
+        // _ Backwards Compatibility
+        // DEPRECATED "charset": "utf8",
+        // DEPRECATED "keyofStringsOnly": true,
+        "noImplicitUseStrict": false,
+        "noStrictGenericChecks": false,
+        "suppressExcessPropertyErrors": false, // NOT NEEDED -> Use // @ts-ignore instead
+        "suppressImplicitAnyIndexErrors": false,
+
+        // _ Language and Environment
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        // "jsx": "preserve", // NOT NEEDED -> No JSX/TSX used
+        // "jsx": "preserve", // NOT NEEDED -> No JSX/TSX used
+        // "jsxFragmentFactory": "React.Fragment" // NOT NEEDED -> No JSX/TSX used
+        // "jsxImportSource": "react" // NOT NEEDED -> No JSX/TSX used
+        // "lib": ["Decorators", "ES2022", "DOM"],
+        "moduleDetection": "force",
+        "noLib": false,
+        // "reactNamespace": "React" // NOT NEEDED -> No JSX/TSX used
+        "target": "ESNext",
+        "useDefineForClassFields": true,
+
+        // _ Compiler Diagnostics
+        "diagnostics": false,
+        "explainFiles": false,
+        "extendedDiagnostics": false,
+        // "generateCpuProfile": "profile.cpuprofile", // NOT NEEDED
+        "listEmittedFiles": false,
+        "listFiles": false,
+        "traceResolution": false,
+
+        // _ Projects
+        "composite": false,
+        "disableReferencedProjectLoad": false,
+        "disableSolutionSearching": false,
+        "disableSourceOfProjectReferenceRedirect": false,
+        "incremental": false,
+        // "tsBuildInfoFile": ".tsbuildinfo", // NOT YET NEEDED -> Only when composite and other related options are true
+
+        // _ Output Formatting
+        "noErrorTruncation": true,
+        "preserveWatchOutput": true,
+        "pretty": true,
+
+        // _ Completeness
+        "skipDefaultLibCheck": false,
+        "skipLibCheck": false,
+
+        // _ Command Line
+
+        // _ Watch Options
+        "assumeChangesOnlyAffectDirectDependencies": true
+    },
+    "exclude": ["OLD/**/*"], // NOT NEEDED
+    //     // "extends": "", // NOT NEEDED
+    //     // "files": [], // NOT NEEDED
+    "include": ["src/**/*", "ts/**/*"]
+    // "references": [], // TODO Try to understand this
+}

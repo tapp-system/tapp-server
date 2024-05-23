@@ -1,0 +1,75 @@
+{
+    "name": "tapp-server",
+    "version": "1.0.0",
+    "private": true,
+    "license": "TODO",
+    "description": "TODO",
+    "keywords": [
+        "typescript",
+        "expressjs",
+        "socket.io",
+        "tapp"
+    ],
+    "homepage": "",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tapp-system/tapp-server.git"
+    },
+    "bugs": {
+        "email": "tapp@hems.de",
+        "url": "https://github.com/tapp-system/tapp-server/issues"
+    },
+    "author": {
+        "email": "tapp@hems.de",
+        "name": "tapp-admin",
+        "url": "https://github.com/tapp-admin"
+    },
+    "main": "dist/index.js",
+    "type": "module",
+    "scripts": {
+        "prebuild": "echo Remove ./dist if it exists",
+        "build": "tsc",
+        "postbuild": "echo sentry cli",
+        "prestart": "pnpm build",
+        "start": "doppler run --command=\"node --import=extensionless/register .\""
+    },
+    "config": {},
+    "dependencies": {
+        "@types/body-parser": "^1.19.5",
+        "@types/cors": "^2.8.17",
+        "@types/express": "^4.17.21",
+        "@types/express-session": "^1.18.0",
+        "@types/node": "^20.12.7",
+        "@types/pg": "^8.11.5",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "express-session": "^1.18.0",
+        "extensionless": "^1.9.6",
+        "joi": "^17.13.1",
+        "nanoid": "^5.0.7",
+        "openid-client": "^5.6.5",
+        "pg": "^8.11.5",
+        "tslib": "^2.6.2",
+        "typescript": "^5.4.5"
+    },
+    "engines": {
+        "node": ">=22.0.0",
+        "pnpm": ">=9.0.6"
+    },
+    "prettier": {
+        "arrowParens": "always",
+        "embeddedLanguageFormatting": "auto",
+        "endOfLine": "lf",
+        "overrides": [],
+        "parser": "",
+        "plugins": [],
+        "printWidth": 80,
+        "quoteProps": "as-needed",
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "useTabs": false
+    }
+}

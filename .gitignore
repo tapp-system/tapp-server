@@ -1,0 +1,12 @@
+# Extensions
+*.dev.md
+*.env
+*.pg.sql
+
+# Files
+.sentryclirc
+
+# Folders
+dist
+node_modules
+OLD

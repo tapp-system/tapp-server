@@ -4,7 +4,6 @@ export default (async function (error, code) {
     try {
         this.respond(500, null, {
             code,
-            error: true,
             message: 'An error occured!',
         });
 

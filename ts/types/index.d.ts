@@ -18,6 +18,7 @@ import type RequestParams from './RequestParams';
 import type RequestQuery from './RequestQuery';
 import type RespondFunction from './RespondFunction';
 import type ResponseBody from './ResponseBody';
+import type ResponseData from './ResponseData';
 import type Route from './Route';
 import type Sentence from './Sentence';
 import type ServerCode from './ServerCode';
@@ -46,6 +47,7 @@ export type {
     RequestQuery,
     RespondFunction,
     ResponseBody,
+    ResponseData,
     Route,
     Sentence,
     ServerCode,

@@ -72,14 +72,14 @@ const routes = async (path: string = '/') => {
             map.forEach((method) => {
                 router[method](
                     route,
-                    middleware || [],
+                    middleware ?? [],
                     handlerWrapper(handler),
                 );
             });
             notMap.forEach((method) => {
                 router[method](
                     route,
-                    middleware || [],
+                    middleware ?? [],
                     handlerWrapper(methodNotAllowed),
                 );
             });
@@ -89,6 +89,7 @@ const routes = async (path: string = '/') => {
                 T.RequestParams,
                 T.RequestQuery
             > = [];
+
             try {
                 const {
                     default: { routeMiddleware },

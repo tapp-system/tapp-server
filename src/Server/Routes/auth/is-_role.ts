@@ -19,7 +19,7 @@ export default {
 
         const result = await req.pool.fetch<Pick<T.TAPP.User, 'role'>>(
             'SELECT role FROM tapp_user WHERE uid = $1;',
-            [req.session.uid],
+            [req.user.id],
         );
         let role = result.rows[0]?.role;
 

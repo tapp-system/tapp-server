@@ -28,7 +28,6 @@ export default (async function (objectSchema) {
         this.res?.respond(400, null, {
             code,
             message: err.details[0]?.message as T.Sentence<'.' | '!'>,
-            error: true,
         });
 
         bool = false;

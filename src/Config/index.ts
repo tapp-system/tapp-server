@@ -6,6 +6,7 @@ import type { RouterOptions } from 'express';
 import type { SessionOptions } from 'express-session';
 import type { ClientMetadata, IssuerMetadata } from 'openid-client';
 import type { PoolConfig } from 'pg';
+import type { ServerOptions } from 'socket.io';
 
 export const cookieMaxAge = 1000 * 60 * 60 * 24 * 7;
 
@@ -45,6 +46,13 @@ export const corsOptions: Readonly<CorsOptions> = {
 };
 
 export const environment = process.env['NODE_ENV'] ?? 'development';
+
+export const fetchNum = 15;
+
+export const IDMCacheOptions = {
+    apiKey: process.env['IDM_API_KEY'] ?? '',
+    urlBase: process.env['IDM_URL_BASE'] ?? '',
+};
 
 export const jsonOptions: Readonly<OptionsJson> = {
     inflate: true,
@@ -184,4 +192,31 @@ export const urlencodedOptions: Readonly<OptionsUrlencoded> = {
     parameterLimit: 100,
     // type
     // verify
+};
+
+export const websocketOptions: Readonly<Partial<ServerOptions>> = {
+    // adapter
+    addTrailingSlash: false,
+    // allowEIO3
+    // allowRequest
+    // allowUpgrades
+    // cleanupEmptyChildNamespaces
+    // connectionStateRecovery
+    connectTimeout: 1000 * 20,
+    // cookie
+    cors: corsOptions,
+    // destroyUpgrade
+    // destroyUpgradeTimeout
+    httpCompression: true,
+    // initialPacket
+    maxHttpBufferSize: 10 ** 5,
+    // parser:
+    path: '/ws',
+    perMessageDeflate: false,
+    pingInterval: 1000 * 20,
+    pingTimeout: 1000 * 30,
+    serveClient: false,
+    transports: ['polling', 'websocket'],
+    // upgradeTimeout
+    // wsEngine
 };

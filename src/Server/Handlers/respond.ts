@@ -23,15 +23,14 @@ export default (async function (status, data, meta) {
             return;
         }
 
-        if (!meta.error) meta.error = false;
-
         this.statusCode = status;
         this.statusMessage = httpCodeMap[status];
 
         this.json({
             data,
             meta: {
-                ...(meta as Pick<T.MetaData, 'code' | 'error' | 'message'>),
+                ...(meta as Pick<T.MetaData, 'code' | 'message'>),
+                error: meta.code.startsWith('C') || meta.code.startsWith('U'),
                 method: this.req.method.toUpperCase(),
                 path: this.req.originalUrl,
             },

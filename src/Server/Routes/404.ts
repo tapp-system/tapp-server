@@ -10,7 +10,6 @@ export default {
         res.respond(404, data ?? null, {
             code: 'C001',
             message: 'Dieser Pfad exisiert nicht.',
-            error: true,
         });
     },
     methods: new Set<T.Http.Method>(['get', 'post']),

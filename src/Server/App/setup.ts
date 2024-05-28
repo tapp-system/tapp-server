@@ -16,7 +16,8 @@ import type { T } from 'ts';
 import routes from './routes';
 
 import { error, respond, validate } from '../Handlers';
-import { error as errorM, user } from '../Middleware';
+import { error as errorM, unhandledError, user } from '../Middleware';
+import ws from '../Websocket';
 
 import {
     corsOptions,
@@ -24,16 +25,19 @@ import {
     sessionOptions,
     urlencodedOptions,
 } from '../../Config';
-import { pool, sessionStore } from '../../Database';
+import { IDMCache, pool, sessionStore } from '../../Database';
 
 const setup: T.SetupFunction = async function () {
+    request.IDMCache = IDMCache;
     request.pool = pool;
+    request.ws = ws;
     request.validate = validate;
 
     response.error = error;
     response.respond = respond;
 
     this.use(session({ ...sessionOptions, store: sessionStore }));
+    this.use(user);
 
     this.use(cors(corsOptions));
     this.use(json(jsonOptions));
@@ -41,9 +45,9 @@ const setup: T.SetupFunction = async function () {
 
     this.use(await routes());
 
-    this.use(user);
     this.use(errorM);
     // TODO Other error monitors like Sentry
+    this.use(unhandledError);
 };
 
 export default setup;

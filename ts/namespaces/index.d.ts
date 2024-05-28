@@ -1,3 +1,4 @@
+import type { Server } from 'socket.io';
 import type { I, T } from 'ts';
 
 declare global {
@@ -23,10 +24,12 @@ declare global {
             IDMCache: I.IDMCache;
             pool: I.Pool;
             user: {
-                apiKey: string | null;
+                apiKey: T.TAPP.Transcriber['api_key'] | null;
+                id: T.TAPP.User['uid'] | null;
                 ip: T.IP.IP;
                 mac: T.MACAddress | null;
             };
+            ws: Server;
 
             validate: T.ValidateFunction;
         }

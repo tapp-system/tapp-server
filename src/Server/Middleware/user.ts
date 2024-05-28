@@ -4,14 +4,16 @@ export default (async (req, _res, next) => {
     try {
         // TODO IP
         const ip = '::1';
+        const id = req.session.uid ?? null;
 
         const mac = (req.header('x-macaddress') as T.MACAddress) ?? null;
-        const apiKey = (req.header('x-api-key') as string) ?? null;
+        const apiKey = (req.header('x-apikey') as string) ?? null;
 
         req.user = {
             apiKey,
-            mac,
+            id,
             ip,
+            mac,
         };
 
         next();

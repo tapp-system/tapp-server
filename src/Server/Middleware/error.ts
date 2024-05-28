@@ -2,7 +2,7 @@ import type { T } from 'ts';
 
 export default (async (err, _req, res, next) => {
     try {
-        console.log('Error middleware triggered');
+        // TODO better logging
         console.error(err);
         if (err instanceof Error) {
             res.error(err, 'U003');

@@ -1,7 +1,7 @@
 import type { T } from 'ts';
 
 type ResponseBody = {
-    data: boolean | number | string | null | T.JSON;
+    data: T.ResponseData;
     meta: T.MetaData;
 };
 

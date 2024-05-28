@@ -10,7 +10,6 @@ type RespondFunction = <
     data: T.ResponseBody['data'],
     meta: {
         code: T.MetaData['code'];
-        error?: T.MetaData['error'];
         message: T.MetaData['message'];
     },
 ) => Promise<This>;

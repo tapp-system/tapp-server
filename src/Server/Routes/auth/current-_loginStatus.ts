@@ -18,10 +18,10 @@ export default {
         let status = req.params.loginStatus === 'loggedIn';
         let loggedIn = false;
 
-        if (req.session.uid) {
+        if (req.user.id) {
             const result = await req.pool.fetch<Pick<T.TAPP.User, 'uid'>>(
                 'SELECT uid FROM tapp_user WHERE uid = $1;',
-                [req.session.uid],
+                [req.user.id],
             );
 
             loggedIn = result.rows.length === 1;

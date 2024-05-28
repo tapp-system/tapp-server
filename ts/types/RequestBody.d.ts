@@ -1,5 +1,8 @@
 import type { T } from 'ts';
 
-type RequestBody = Record<string, T.JSON | null | undefined>;
+type RequestBody = Record<
+    string,
+    string | number | string[] | number[] | null | undefined
+>;
 
 export default RequestBody;
